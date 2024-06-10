@@ -10,6 +10,17 @@ on:
       - '.github/workflows/**'
   schedule:
     - cron: '20 0,1 * * *'
+  # allow manual trigger
+  workflow_dispatch:
+    logLevel:
+      description: 'Log level'
+      required: true
+      default: 'warning'
+      type: choice
+      options:
+        - info
+        - warning
+        - debug
 
 env:
   TZ: Asia/Shanghai
